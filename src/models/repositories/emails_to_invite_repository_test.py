@@ -23,7 +23,10 @@ def test_registry_email():
 def test_find_emails_from_trip():
     conn = db_connection_handler.get_connection()
     emails_to_invite_repositoy = EmailsToInviteRepository(conn)
-
+    
     emails = emails_to_invite_repositoy.find_emails_from_trip(trip_id)
-    print(emails)
+    
+    assert isinstance(emails, list)
+    if len(emails)>0:
+        assert isinstance(emails[0], tuple)
     
