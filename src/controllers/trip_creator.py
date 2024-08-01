@@ -5,7 +5,7 @@ from src.models.repositories.emails_to_invite_repository import EmailsToInviteRe
 class TripCreator():
     def __init__(self, trips_repository: TripsRepository, emails_repository: EmailsToInviteRepository) -> None:
         self.__trip_repository = trips_repository
-        self.__emails_repository: emails_repository
+        self.__emails_repository = emails_repository
 
     def create(self, body) -> dict:
         try:

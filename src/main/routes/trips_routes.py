@@ -10,8 +10,8 @@ trips_routes_bp = Blueprint("trip_routes", __name__)
 def create_trip():
     conn = db_connection_handler.get_connection()
     trips_repository = TripsRepository(conn)
-    emails_to_invite_repository = EmailsToInviteRepository(conn)
-    controller = TripCreator(trips_repository, emails_to_invite_repository)
+    emails_repository = EmailsToInviteRepository(conn)
+    controller = TripCreator(trips_repository, emails_repository)
 
     response = controller.create(request.json)
 
