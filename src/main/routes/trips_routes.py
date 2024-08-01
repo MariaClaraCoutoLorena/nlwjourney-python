@@ -18,7 +18,7 @@ def create_trip():
 
     return jsonify(response["body"]), response["status_code"]
 
-@trips_routes_bp.route("/trips/<tripId>", method=["GET"])
+@trips_routes_bp.route("/trips/<tripId>", methods=["GET"])
 def find_trip(tripId):
     conn = db_connection_handler.get_connection()
     trips_repository = TripsRepository(conn)
