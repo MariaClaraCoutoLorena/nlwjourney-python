@@ -1,6 +1,4 @@
-
 import uuid
-
 
 class LinkCreator:
 
